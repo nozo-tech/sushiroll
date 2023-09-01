@@ -18,8 +18,7 @@ class RollFactory extends Factory
     {
         return [
             'title' => fake()->title(),
-            'description' => fake()->text(),
-            'content' => fake()->text()
+            'description' => fake()->text()
         ];
     }
 }
