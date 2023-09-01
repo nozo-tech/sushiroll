@@ -35,6 +35,17 @@ class RollSeeder extends Seeder
                             ->hasRollComments(2)
                     )
             )
-            ->create(['content' => 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4']);
+            ->create();
+
+        Roll::factory(5)
+            ->for(RollType::where('type', 'gallery')->get()->first())
+            ->has(
+                RollComment::factory(4)
+                    ->has(
+                        RollComment::factory(3)
+                            ->hasRollComments(2)
+                    )
+            )
+            ->create();
     }
 }
