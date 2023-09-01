@@ -14,22 +14,22 @@ class RollTypeSeeder extends Seeder
     {
         \App\Models\RollType::factory()->create([
             'type' => 'text',
-            'name' => 'Text'
+            'name' => 'Text Roll'
         ]);
 
         \App\Models\RollType::factory()->create([
             'type' => 'video',
-            'name' => 'Video'
+            'name' => 'Video Roll'
         ]);
 
         \App\Models\RollType::factory()->create([
             'type' => 'gallery',
-            'name' => 'Image Gallery'
+            'name' => 'Image Gallery Roll'
         ]);
 
         \App\Models\RollType::factory()->create([
             'type' => 'live',
-            'name' => 'Livestream'
+            'name' => 'Livestream Roll'
         ]);
     }
 }

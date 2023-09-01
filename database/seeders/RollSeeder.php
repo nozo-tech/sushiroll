@@ -2,6 +2,8 @@
 
 namespace Database\Seeders;
 
+use App\Models\Roll;
+use App\Models\RollType;
 use App\Models\RollComment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -13,11 +15,26 @@ class RollSeeder extends Seeder
      */
     public function run(): void
     {
-        $text_roll_type = \App\Models\RollType::where('type', 'text');
-
-        \App\Models\Roll::factory(5)
-            ->for($text_roll_type)
-            ->hasRollComments(5)
+        Roll::factory(5)
+            ->for(RollType::where('type', 'text')->get()->first())
+            ->has(
+                RollComment::factory(4)
+                    ->has(
+                        RollComment::factory(3)
+                            ->hasRollComments(2)
+                    )
+            )
             ->create();
+
+        Roll::factory(5)
+            ->for(RollType::where('type', 'video')->get()->first())
+            ->has(
+                RollComment::factory(4)
+                    ->has(
+                        RollComment::factory(3)
+                            ->hasRollComments(2)
+                    )
+            )
+            ->create(['content' => 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4']);
     }
 }

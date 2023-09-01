@@ -15,7 +15,11 @@ use App\Http\Controllers\RollController;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('home');
 });
 
 Route::resource('roll', RollController::class);
+
+//Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
