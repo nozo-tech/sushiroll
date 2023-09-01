@@ -5,7 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class RollComment extends Model
 {
@@ -23,10 +24,18 @@ class RollComment extends Model
     ];
 
     /**
-     * Get the roll of this roll comment.
+     * Get the parent roll commentable model (roll or roll comment).
      */
-    public function roll(): BelongsTo
+    public function commentable(): MorphTo
     {
-        return $this->belongsTo(Roll::class);
+        return $this->morphTo();
+    }
+
+    /**
+     * Get the roll comments of this roll comment.
+     */
+    public function rollComments(): MorphMany
+    {
+        return $this->morphMany(RollComment::class, 'roll_commentable');
     }
 }

@@ -15,8 +15,7 @@ return new class extends Migration
             $table->ulid('id')->unique()->primary();
             $table->string('title')->nullable();
             $table->longText('description');
-            $table->foreignUlid('roll_id')->nullable();
-            $table->foreignUlid('roll_comment_id')->nullable();
+            $table->ulidMorphs('roll_commentable');
             $table->softDeletes();
             $table->timestamps();
         });
