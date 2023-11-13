@@ -1,5 +1,8 @@
 ![Project Banner](banner.jpg)
 
+[![Active Development](https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/nozo-tech/sushiroll)
+
 # Sushiroll
 
 Welcome to Sushiroll - A Next-Generation Social Networking Experience 🍣
