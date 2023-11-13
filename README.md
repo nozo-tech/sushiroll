@@ -1,4 +1,4 @@
-![Logo](logo.jpg)
+![Project Banner](banner.jpg)
 
 # Sushiroll
 
