@@ -19,15 +19,16 @@
             </div>
 
             @foreach (\App\Models\Roll::all() as $roll)
-                <div class="card my-4">
-                    <div class="card-header">{{ $roll->rollType->name }}</div>
+                <a href="{{ route('roll.show', $roll) }}">
+                    <div class="card my-4">
+                        <div class="card-header">{{ $roll->rollType->name }}</div>
 
-                    <div class="card-body">
-                        <h5 class="card-title">{{ $roll->title }}</h5>
-                        <p class="card-text">{{ $roll->description }}</p>
-                        <a href="{{ route('roll.show', $roll) }}" class="btn btn-primary">{{ __('Watch') }}</a>
+                        <div class="card-body">
+                                <h5 class="card-title">{{ $roll->title }}</h5>
+                                <p class="card-text">{{ $roll->description }}</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             @endforeach
         </div>
     </div>
