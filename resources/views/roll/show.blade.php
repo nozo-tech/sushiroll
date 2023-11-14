@@ -11,6 +11,12 @@
                 @case('video')
                     <x-roll-video :$roll />
                     @break
+                @case('gallery')
+                    <x-roll-gallery :$roll />
+                    @break
+                @case('live')
+                    <x-roll-live :$roll />
+                    @break
 
                 @default
 
