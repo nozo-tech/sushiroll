@@ -16,11 +16,9 @@ return new class extends Migration
             $table->ulid('id')->unique()->primary();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->longText('content');
             $table->foreignIdFor(RollType::class);
             $table->softDeletes();
             $table->timestamps();
-
         });
     }
 

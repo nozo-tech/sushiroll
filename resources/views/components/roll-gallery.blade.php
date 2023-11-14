@@ -1,3 +1,10 @@
 <div>
-    <!-- You must be the change you wish to see in the world. - Mahatma Gandhi -->
+    <div class="card">
+        <div class="card-header">{{ __('Gallery Roll') }}</div>
+
+        <div class="card-body">
+            <h5 class="card-title">{{ $roll->title }}</h5>
+            <p class="card-text">{{ $roll->description }}</p>
+        </div>
+    </div>
 </div>
