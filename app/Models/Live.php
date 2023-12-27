@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Roll extends Model
+class Live extends Model
 {
     use HasFactory;
     use HasUlids;
@@ -20,22 +20,23 @@ class Roll extends Model
      */
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'is_public'
     ];
 
     /**
-     * Get the comments of this roll.
+     * Get the comments of this live.
      */
     public function comments(): MorphMany
     {
-        return $this->morphMany(Roll::class, 'commentable');
+        return $this->morphMany(Live::class, 'commentable');
     }
 
     /**
-     * Get the user that owns the roll.
+     * Get the channel that owns the live.
      */
-    public function user(): BelongsTo
+    public function channel(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Channel::class);
     }
 }
