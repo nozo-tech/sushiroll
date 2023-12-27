@@ -5,10 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Roll extends Model
+class Comment extends Model
 {
     use HasFactory;
     use HasUlids;
@@ -19,23 +19,22 @@ class Roll extends Model
      * @var array
      */
     protected $fillable = [
-        'title',
-        'description'
+        'text',
     ];
 
     /**
-     * Get the comments of this roll.
+     * Get the parent commentable model (roll or comment).
      */
-    public function comments(): MorphMany
+    public function commentable(): MorphTo
     {
-        return $this->morphMany(Roll::class, 'commentable');
+        return $this->morphTo();
     }
 
     /**
-     * Get the user that owns the roll.
+     * Get the comments of this comment.
      */
-    public function user(): BelongsTo
+    public function comments(): MorphMany
     {
-        return $this->belongsTo(User::class);
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }
