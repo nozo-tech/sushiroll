@@ -11,7 +11,7 @@ class StoreRollRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class StoreRollRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'title' => 'required',
+            'description' => 'required',
+            'video' => 'required|file|mimetypes:video/mp4,video/mpeg,video/x-matroska',
         ];
     }
 }
