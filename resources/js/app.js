@@ -1,6 +1,6 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
-import { ZiggyVue } from 'ziggy-js'
+import { ZiggyVue } from '~ziggy-js'
 
 createInertiaApp({
     resolve: name => {

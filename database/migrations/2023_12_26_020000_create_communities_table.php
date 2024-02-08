@@ -16,7 +16,7 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->foreignIdFor(Channel::class)->constrained();
+            $table->morphs('communityable');
             $table->softDeletes();
             $table->timestamps();
         });
