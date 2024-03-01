@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RollController;
-use App\Http\Controllers\LiveRollController;
+use App\Http\Controllers\LiveController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\GroupController;
@@ -31,7 +31,7 @@ Route::resource('/channels', ChannelController::class);
 Route::resource('/communities', CommunityController::class);
 
 Route::resource('/rolls', RollController::class);
-Route::resource('/lives', LiveRollController::class);
+Route::resource('/lives', LiveController::class);
 Route::resource('/threads', ThreadController::class);
 
 Route::middleware(['auth:sanctum', 'verified'])->group(function () {

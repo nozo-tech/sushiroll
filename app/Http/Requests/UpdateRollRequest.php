@@ -11,7 +11,7 @@ class UpdateRollRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->validated('user_id') === $this->user()->id;
     }
 
     /**

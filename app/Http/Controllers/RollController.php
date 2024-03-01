@@ -37,7 +37,7 @@ class RollController extends Controller
      */
     public function show(Roll $roll)
     {
-        return view('roll.show', [
+        return inertia('Rolls/Show', [
             'roll' => $roll
         ]);
     }
