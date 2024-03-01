@@ -18,6 +18,7 @@ return new class extends Migration
             $table->longText('description')->nullable();
             $table->string('path');
             $table->boolean('is_public')->default(false);
+            $table->boolean('taken_down')->default(false);
             $table->foreignIdFor(Channel::class)->constrained();
             $table->softDeletes();
             $table->timestamps();
