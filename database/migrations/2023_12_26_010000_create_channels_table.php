@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description')->nullable();
             $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(Group::class)->nullable();
+            $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

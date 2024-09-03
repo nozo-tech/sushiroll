@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->text('description')->nullable();
             $table->morphs('communityable');
+            $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

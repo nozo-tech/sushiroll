@@ -1,5 +1,4 @@
 ![Project Banner](banner.jpg)
-
 [![Active Development](https://img.shields.io/badge/Maintenance%20Level-Actively%20Developed-brightgreen.svg)](https://gist.github.com/cheerfulstoic/d107229326a01ff0f333a1d3476e068d)
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/nozo-tech/sushiroll)
 
@@ -8,6 +7,7 @@
 Welcome to Sushiroll - A Next-Generation Social Networking Experience 🍣
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Features](#features)
 3. [Getting Started](#getting-started)
@@ -23,34 +23,39 @@ Sushiroll is a revolutionary social networking platform developed by the innovat
 ## Features
 
 ### 1. **Customizable Recommendation Engine**
-   - Sushiroll introduces a cutting-edge recommendation engine that puts users in control. Tailor your content recommendations based on your unique interests, breaking free from the limitations of traditional algorithms.
+
+- Sushiroll introduces a cutting-edge recommendation engine that puts users in control. Tailor your content recommendations based on your unique interests, breaking free from the limitations of traditional algorithms.
 
 ### 2. **Dynamic Content Sharing**
-   - Express yourself in a variety of formats, including long-form videos, images, and concise text updates. Sushiroll goes beyond the conventional, allowing users to share diverse content that reflects their individuality.
+
+- Express yourself in a variety of formats, including long-form videos, images, and concise text updates. Sushiroll goes beyond the conventional, allowing users to share diverse content that reflects their individuality.
 
 ## Getting Started
 
 To get started with Sushiroll, follow these steps:
 
 1. Clone the repository:
-   ```
-   git clone https://github.com/nozo-tech/sushiroll.git
-   ```
+
+```bash
+git clone https://github.com/nozo-tech/sushiroll.git
+```
 
 2. Install dependencies:
-   ```
-   cd sushiroll
-   composer install
-   npm install
-   npm run build
-   ```
+
+```bash
+cd sushiroll
+composer install
+npm install
+npm run build
+```
 
 3. Run the application:
-   ```
-   php artisan serve
-   ```
 
-   Sushiroll will be accessible at [http://localhost:8000](http://localhost:8000).
+```bash
+php artisan serve
+```
+
+Sushiroll will be accessible at [http://localhost:8000](http://localhost:8000).
 
 ## Customizable Recommendation Engine
 
