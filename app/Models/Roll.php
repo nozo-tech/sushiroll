@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Roll extends Model
 {
-    use HasFactory;
-    use HasUlids;
+    use HasFactory, HasUlids;
 
     /**
      * The attributes that are mass assignable.
@@ -28,14 +27,14 @@ class Roll extends Model
      */
     public function comments(): MorphMany
     {
-        return $this->morphMany(Roll::class, 'commentable');
+        return $this->morphMany(Comment::class, 'commentable');
     }
 
     /**
-     * Get the user that owns the roll.
+     * Get the channel that owns the roll.
      */
-    public function user(): BelongsTo
+    public function channel(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(Channel::class);
     }
 }

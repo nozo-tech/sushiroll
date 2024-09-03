@@ -13,7 +13,9 @@ class RollController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Rolls/Index', [
+            'rolls' => Roll::all()
+        ]);
     }
 
     /**
@@ -21,7 +23,7 @@ class RollController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Rolls/Create');
     }
 
     /**
@@ -37,7 +39,7 @@ class RollController extends Controller
      */
     public function show(Roll $roll)
     {
-        return view('roll.show', [
+        return inertia('Rolls/Show', [
             'roll' => $roll
         ]);
     }
