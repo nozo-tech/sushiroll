@@ -16,8 +16,8 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->string('path');
-            $table->boolean('is_public')->default(false);
+            $table->boolean('is_locked')->default(false);
+            $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
             $table->foreignIdFor(Channel::class)->constrained();
             $table->softDeletes();
             $table->timestamps();

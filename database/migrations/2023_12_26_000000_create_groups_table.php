@@ -15,6 +15,7 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->string('name')->unique();
             $table->text('description')->nullable();
+            $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

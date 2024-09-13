@@ -8,8 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Group extends Model
 {
-    use HasFactory;
-    use HasUlids;
+    use HasFactory, HasUlids;
 
     /**
      * The attributes that are mass assignable.

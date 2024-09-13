@@ -16,7 +16,9 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->string('title');
             $table->longText('description')->nullable();
-            $table->boolean('is_public')->default(false);
+            $table->boolean('is_live')->default(false);
+            $table->boolean('is_locked')->default(false);
+            $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
             $table->foreignIdFor(Channel::class)->constrained();
             $table->softDeletes();
             $table->timestamps();
@@ -28,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('live_rolls');
+        Schema::dropIfExists('lives');
     }
 };

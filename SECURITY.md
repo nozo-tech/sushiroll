@@ -2,7 +2,7 @@
 
 ## Reporting a Vulnerability
 
-At Sushiroll, we take security seriously. If you discover any security issues or vulnerabilities within the project, please report them to our security team by emailing [eliotvonecklie@email.com](mailto:eliotvonecklie@email.com). We appreciate your responsible disclosure, and we will work to promptly address and fix the issue.
+At Sushiroll, we take security seriously. If you discover any security issues or vulnerabilities within the project, please report them to our security team by emailing [kyokotoreno@proton.me](mailto:kyokotoreno@proton.me). We appreciate your responsible disclosure, and we will work to promptly address and fix the issue.
 
 ## Expectations
 
