@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RollController;
-use App\Http\Controllers\LiveRollController;
+use App\Http\Controllers\LiveController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\GroupController;

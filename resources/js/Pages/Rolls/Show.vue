@@ -7,9 +7,9 @@ import DOMPurify from 'dompurify';
 import { marked } from 'marked';
 
 const props = defineProps({ roll: Object });
-
 const player_container = ref(null);
 const player = ref(null);
+
 onMounted(() => {
     player.value = videojs(player_container.value, {
         controls: true,
@@ -23,6 +23,7 @@ onMounted(() => {
         }],
     });
 });
+
 onBeforeUnmount(() => {
     if (player.value) {
         player.value.dispose();
