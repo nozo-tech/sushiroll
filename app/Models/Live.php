@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Live extends Model
 {
-    use HasFactory;
-    use HasUlids;
+    use HasFactory, HasUlids;
 
     /**
      * The attributes that are mass assignable.

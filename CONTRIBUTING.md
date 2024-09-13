@@ -4,35 +4,40 @@ Thank you for considering contributing to Sushiroll! Your involvement helps make
 
 ## Code of Conduct
 
-This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [eliotvonecklie@email.com](mailto:eliotvonecklie@email.com).
+This project and everyone participating in it is governed by our [Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code. Please report unacceptable behavior to [kyokotoreno@proton.me](mailto:kyokotoreno@proton.me).
 
 ## How to Contribute
 
 1. Fork the repository.
 
 2. Clone the forked repository to your local machine:
-    ```
-    git clone https://github.com/your-username/sushiroll.git
-    ```
+
+```bash
+git clone https://github.com/your-username/sushiroll.git
+```
 
 3. Create a new branch for your changes:
-    ```
-    git checkout -b feature/your-feature
-    ```
+
+```bash
+git checkout -b feature/your-feature
+```
 
 4. Make your changes and commit them:
-    ```
-    git commit -m "Add your message here"
-    ```
+
+```bash
+git commit -m "Add your message here"
+```
 
 5. Push the changes to your fork:
-    ```
-    git push origin feature/your-feature
-    ```
+
+```bash
+git push origin feature/your-feature
+```
 
 6. Create a pull request:
-    - Open a pull request on the [main repository](https://github.com/nozo-tech/sushiroll) with a detailed description of your changes.
-    - Reference any relevant issues in your pull request.
+
+- Open a pull request on the [main repository](https://github.com/nozo-tech/sushiroll) with a detailed description of your changes.
+- Reference any relevant issues in your pull request.
 
 ## Reporting Bugs
 

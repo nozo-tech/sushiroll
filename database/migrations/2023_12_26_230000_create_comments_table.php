@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->ulid('id')->primary();
-            $table->longText('comment');
+            $table->longText('text');
             $table->ulidMorphs('commentable');
             $table->softDeletes();
             $table->timestamps();

@@ -13,7 +13,7 @@ class ThreadController extends Controller
      */
     public function index()
     {
-        //
+
     }
 
     /**
@@ -37,7 +37,17 @@ class ThreadController extends Controller
      */
     public function show(Thread $thread)
     {
-        //
+        return inertia('Threads/Show', ['thread' => [
+            'id' => $thread->id,
+            'title' => $thread->title,
+            'text' => $thread->text,
+            'user' => $thread->user,
+            'is_locked' => $thread->is_locked,
+            'is_private' => $thread->is_private,
+            'community' => $thread->community,
+            'created_at' => $thread->created_at,
+            'updated_at' => $thread->updated_at,
+        ]]);
     }
 
     /**

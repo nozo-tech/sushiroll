@@ -17,8 +17,10 @@ return new class extends Migration
             $table->ulid('id')->primary();
             $table->string('title');
             $table->longText('text');
+            $table->boolean('is_locked')->default(false);
+            $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
             $table->foreignIdFor(User::class)->constrained();
-            $table->foreignIdFor(Community::class)->constrained();
+            $table->foreignIdFor(Community::class)->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
