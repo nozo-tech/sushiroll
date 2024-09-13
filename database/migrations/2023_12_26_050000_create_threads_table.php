@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->longText('text');
             $table->boolean('is_locked')->default(false);
-            $table->boolean('is_private')->default(false);
+            $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
             $table->foreignIdFor(User::class)->constrained();
             $table->foreignIdFor(Community::class)->nullable();
             $table->softDeletes();
