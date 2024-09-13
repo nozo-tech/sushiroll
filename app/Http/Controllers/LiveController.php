@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\RollType;
-use Illuminate\Http\Request;
+use App\Models\Live;
+use App\Http\Requests\StoreLiveRequest;
+use App\Http\Requests\UpdateLiveRequest;
 
-class RollTypeController extends Controller
+class LiveController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -26,7 +27,7 @@ class RollTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreLiveRequest $request)
     {
         //
     }
@@ -34,7 +35,7 @@ class RollTypeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(RollType $rollType)
+    public function show(Live $live)
     {
         //
     }
@@ -42,7 +43,7 @@ class RollTypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(RollType $rollType)
+    public function edit(Live $live)
     {
         //
     }
@@ -50,7 +51,7 @@ class RollTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, RollType $rollType)
+    public function update(UpdateLiveRequest $request, Live $live)
     {
         //
     }
@@ -58,7 +59,7 @@ class RollTypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(RollType $rollType)
+    public function destroy(Live $live)
     {
         //
     }
