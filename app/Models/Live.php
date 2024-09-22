@@ -20,22 +20,40 @@ class Live extends Model
     protected $fillable = [
         'title',
         'description',
-        'is_public'
+        'is_live',
+        'is_locked',
+        'visibility',
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'channel_id',
+    ];
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['channel'];
+
+    /**
+     * Get the channel that published the live.
+     */
+    public function channel(): BelongsTo
+    {
+        return $this->belongsTo(Channel::class);
+    }
 
     /**
      * Get the comments of this live.
      */
     public function comments(): MorphMany
     {
-        return $this->morphMany(Live::class, 'commentable');
-    }
-
-    /**
-     * Get the channel that owns the live.
-     */
-    public function channel(): BelongsTo
-    {
-        return $this->belongsTo(Channel::class);
+        return $this->morphMany(Comment::class, 'commentable');
     }
 }

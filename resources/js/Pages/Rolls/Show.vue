@@ -1,12 +1,12 @@
 <script setup>
 import DefaultLayout from '@/Layouts/Default.vue';
+import Comments from '@/Components/Comments.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { Link } from '@inertiajs/vue3';
 import 'video.js/dist/video-js.css';
 import videojs from 'video.js';
-import DOMPurify from 'dompurify';
-import { marked } from 'marked';
 
-const props = defineProps({ roll: Object });
+defineProps({ roll: Object });
 const player_container = ref(null);
 const player = ref(null);
 
@@ -25,16 +25,8 @@ onMounted(() => {
 });
 
 onBeforeUnmount(() => {
-    if (player.value) {
-        player.value.dispose();
-    }
+    player.value?.dispose();
 });
-
-const description_md = DOMPurify.sanitize(
-    marked(
-        props.roll.description.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/,"")
-    )
-);
 </script>
 
 <template>
@@ -46,14 +38,18 @@ const description_md = DOMPurify.sanitize(
 
             <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl">{{ roll.title }}</h1>
 
-            <div class="mb-4">
-                <span>By: {{ roll.channel?.name || 'Deleted Channel' }}</span>
+            <div class="mb-4 grid grid-flow-row">
+                <span>By: <Link v-if="roll.channel" :href="route('channels.show', { channel: roll.channel.id })">{{ roll.channel.name }}</Link><span v-else>Deleted Channel</span></span>
                 <!-- <span v-if="thread.community">Posted to: {{ thread.community.title }}</span> -->
+                <span>Posted on: {{ roll.created_at }}</span>
+                <span v-if="roll.updated_at !== roll.created_at">Updated on: {{ roll.updated_at }}</span>
             </div>
 
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-            <section v-html="description_md" class="prose dark:prose-invert"></section>
+            <section v-html="$markdown(roll.description)" class="w-all prose dark:prose-invert"></section>
+
+            <Comments :comments="roll.comments" />
         </div>
     </DefaultLayout>
 </template>

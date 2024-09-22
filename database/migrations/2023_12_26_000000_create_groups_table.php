@@ -13,8 +13,10 @@ return new class extends Migration
     {
         Schema::create('groups', function (Blueprint $table) {
             $table->ulid('id')->primary();
+            $table->string('handle')->unique();
             $table->string('name')->unique();
             $table->text('description')->nullable();
+            $table->foreignIdFor(\App\Models\User::class)->constrained();
             $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();

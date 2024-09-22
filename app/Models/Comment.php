@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Comment extends Model
 {
-    use HasFactory;
-    use HasUlids;
+    use HasFactory, HasUlids;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +20,28 @@ class Comment extends Model
     protected $fillable = [
         'text',
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     */
+    protected $hidden = [
+        'user_id',
+        'commentable_id',
+        'commentable_type',
+    ];
+
+    /**
+     * The relationships that should always be loaded.
+     */
+    protected $with = ['user'];
+
+    /**
+     * Get the user that published the comment.
+     */
+    public function user(): MorphTo
+    {
+        return $this->morphTo();
+    }
 
     /**
      * Get the parent commentable model (roll or comment).

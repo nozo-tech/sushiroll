@@ -19,8 +19,34 @@ class Roll extends Model
      */
     protected $fillable = [
         'title',
-        'description'
+        'description',
+        'is_locked',
+        'visibility',
     ];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'channel_id',
+    ];
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    protected $with = ['channel'];
+
+    /**
+     * Get the channel that published the roll.
+     */
+    public function channel(): BelongsTo
+    {
+        return $this->belongsTo(Channel::class);
+    }
 
     /**
      * Get the comments of this roll.
@@ -28,13 +54,5 @@ class Roll extends Model
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
-    }
-
-    /**
-     * Get the channel that owns the roll.
-     */
-    public function channel(): BelongsTo
-    {
-        return $this->belongsTo(Channel::class);
     }
 }

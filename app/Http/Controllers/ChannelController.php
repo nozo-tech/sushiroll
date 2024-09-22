@@ -13,7 +13,9 @@ class ChannelController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Channels/Index', [
+            'channels' => Channel::all()
+        ]);
     }
 
     /**
@@ -21,7 +23,7 @@ class ChannelController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Channels/Create');
     }
 
     /**
@@ -37,7 +39,9 @@ class ChannelController extends Controller
      */
     public function show(Channel $channel)
     {
-        //
+        return inertia('Channels/Show', [
+            'channel' => $channel->load('rolls')->loadCount('rolls')
+        ]);
     }
 
     /**

@@ -5,15 +5,29 @@ namespace App\Http\Controllers;
 use App\Models\Thread;
 use App\Http\Requests\StoreThreadRequest;
 use App\Http\Requests\UpdateThreadRequest;
+use App\Models\Community;
+use App\Models\User;
 
 class ThreadController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource for a user.
      */
-    public function index()
+    public function user_index(User $user)
     {
+        return inertia('Threads/Index', [
+            'threads' => $user->threads
+        ]);
+    }
 
+    /**
+     * Display a listing of the resource for a community.
+     */
+    public function community_index(Community $community)
+    {
+        return inertia('Threads/Index', [
+            'threads' => $community->threads
+        ]);
     }
 
     /**
@@ -21,7 +35,7 @@ class ThreadController extends Controller
      */
     public function create()
     {
-        //
+        return inertia('Threads/Create');
     }
 
     /**
@@ -37,17 +51,9 @@ class ThreadController extends Controller
      */
     public function show(Thread $thread)
     {
-        return inertia('Threads/Show', ['thread' => [
-            'id' => $thread->id,
-            'title' => $thread->title,
-            'text' => $thread->text,
-            'user' => $thread->user,
-            'is_locked' => $thread->is_locked,
-            'is_private' => $thread->is_private,
-            'community' => $thread->community,
-            'created_at' => $thread->created_at,
-            'updated_at' => $thread->updated_at,
-        ]]);
+        return inertia('Threads/Show', [
+            'thread' => $thread->load('comments')->loadCount('comments')
+        ]);
     }
 
     /**
@@ -55,7 +61,9 @@ class ThreadController extends Controller
      */
     public function edit(Thread $thread)
     {
-        //
+        return inertia('Threads/Edit', [
+            'thread' => $thread
+        ]);
     }
 
     /**

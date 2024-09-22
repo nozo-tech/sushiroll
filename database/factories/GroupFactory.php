@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Channel>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Group>
  */
-class ChannelFactory extends Factory
+class GroupFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -20,7 +20,6 @@ class ChannelFactory extends Factory
             'handle' => fake()->unique()->userName(),
             'name' => fake()->name(),
             'description' => fake()->text(),
-            'livestream_key' => fake()->optional()->word(),
         ];
     }
 }

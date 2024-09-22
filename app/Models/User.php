@@ -18,10 +18,12 @@ class User extends Authenticatable
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $fillable = [
+        'handle',
         'name',
+        'description',
         'email',
         'password',
     ];
@@ -29,7 +31,7 @@ class User extends Authenticatable
     /**
      * The attributes that should be hidden for serialization.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $hidden = [
         'password',
@@ -39,7 +41,7 @@ class User extends Authenticatable
     /**
      * The attributes that should be cast.
      *
-     * @var array<string, string>
+     * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
@@ -47,10 +49,34 @@ class User extends Authenticatable
     ];
 
     /**
+     * Get the threads that the user has created.
+     */
+    public function threads(): HasMany
+    {
+        return $this->hasMany(Thread::class);
+    }
+
+    /**
      * Get the channels that the user owns.
      */
     public function channels(): HasMany
     {
         return $this->hasMany(Channel::class);
+    }
+
+    /**
+     * Get the groups that the user owns.
+     */
+    public function groups(): HasMany
+    {
+        return $this->hasMany(Group::class);
+    }
+
+    /**
+     * Get the communities that the user has created.
+     */
+    public function communities(): HasMany
+    {
+        return $this->hasMany(Community::class);
     }
 }
