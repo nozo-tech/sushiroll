@@ -13,15 +13,27 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(1)
+        \App\Models\User::factory(4)
             ->has(
-                \App\Models\Channel::factory()
+                \App\Models\Channel::factory(1)
                     ->has(
-                        \App\Models\Roll::factory()
+                        \App\Models\Roll::factory(16)
                             ->hasComments(16)
-                            ->count(1)
                     )
-                    ->count(1)
+            )
+            ->has(
+                \App\Models\Community::factory(1)
+                    ->has(
+                        \App\Models\Thread::factory(1)
+                            ->hasComments(16)
+                            ->state(function (array $attributes, \App\Models\Community $community) {
+                                return ['user_id' => $community->user->id];
+                            })
+                    )
+            )
+            ->has(
+                \App\Models\Thread::factory(4)
+                    ->hasComments(16)
             )
             ->create();
 

@@ -1,14 +1,8 @@
 <script setup>
 import DefaultLayout from '@/Layouts/Default.vue';
-import DOMPurify from 'dompurify';
-import { marked } from 'marked';
+import Comments from '@/Components/Comments.vue';
 
-const props = defineProps({ thread: Object });
-const markdown = DOMPurify.sanitize(
-    marked(
-        props.thread.text.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/,"")
-    )
-);
+defineProps({ thread: Object });
 </script>
 
 <template>
@@ -16,14 +10,18 @@ const markdown = DOMPurify.sanitize(
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 text-gray-900 dark:text-white">
             <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tigh md:text-5xl lg:text-6xl">{{ thread.title }}</h1>
 
-            <div class="mb-4">
-                <span>By: {{ thread.user.name || 'Deleted User' }}</span>
-                <span v-if="thread.community">Posted to: {{ thread.community.title }}</span>
+            <div class="mb-4 grid grid-flow-row">
+                <span>By: {{ thread.user?.name || 'Deleted User' }}</span>
+                <span v-if="thread.community">Posted to: {{ thread.community.name }}</span>
+                <span>Posted on: {{ thread.created_at }}</span>
+                <span v-if="thread.updated_at !== thread.created_at">Updated on: {{ thread.updated_at }}</span>
             </div>
 
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-            <section v-html="markdown" class="prose dark:prose-invert"></section>
+            <section v-html="$markdown(thread.text)" class="prose dark:prose-invert"></section>
+
+            <Comments :comments="thread.comments" />
         </div>
     </DefaultLayout>
 </template>

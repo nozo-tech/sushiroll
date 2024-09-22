@@ -31,7 +31,7 @@ class RollController extends Controller
      */
     public function store(StoreRollRequest $request)
     {
-
+        //
     }
 
     /**
@@ -40,7 +40,7 @@ class RollController extends Controller
     public function show(Roll $roll)
     {
         return inertia('Rolls/Show', [
-            'roll' => $roll
+            'roll' => $roll->load('comments')->loadCount('comments')
         ]);
     }
 
@@ -49,7 +49,9 @@ class RollController extends Controller
      */
     public function edit(Roll $roll)
     {
-        //
+        return inertia('Rolls/Edit', [
+            'roll' => $roll
+        ]);
     }
 
     /**

@@ -13,7 +13,9 @@ class CommunityController extends Controller
      */
     public function index()
     {
-        //
+        return inertia('Communities/Index', [
+            'communities' => Community::all()
+        ]);
     }
 
     /**
@@ -37,7 +39,9 @@ class CommunityController extends Controller
      */
     public function show(Community $community)
     {
-        //
+        return inertia('Communities/Show', [
+            'community' => $community->load('threads')->loadCount('threads')
+        ]);
     }
 
     /**

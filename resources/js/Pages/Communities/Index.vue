@@ -2,23 +2,23 @@
 import DefaultLayout from '@/Layouts/Default.vue';
 import { Link } from '@inertiajs/vue3';
 
-defineProps({ rolls: Array });
+defineProps({ communities: Array });
 </script>
 
 <template>
     <DefaultLayout>
         <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16">
-            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Explore Rolls</h1>
+            <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">Explore Communities</h1>
             <p class="mb-6 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">Here you can start your experience.</p>
 
             <div class="pt-16 px-4">
                 <ul class="flex flex-col gap-5">
-                    <li v-for="roll in rolls">
-                        <Link :href="route('rolls.show', { roll: roll.id })" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow lg:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <li v-for="community in communities">
+                        <Link :href="route('communities.show', { community: community.id })" class="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow lg:flex-row hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
                             <!-- <img class="object-cover h-full rounded-t-lg w-96 lg:w-auto lg:h-48 md:rounded-none md:rounded-s-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt=""> -->
                             <div class="flex flex-col justify-between p-4 mx-auto leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ roll.title }}</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ roll.description }}</p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ community.name }} (co@{{ community.handle }})</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ community.description }}</p>
                                 <!--
                                 <div class="flex mb-3 items-center mt-4">
                                     <span class="text-sm font-medium text-gray-700 dark:text-gray-400">7👍 | 3👎</span>

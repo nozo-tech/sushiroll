@@ -5,9 +5,9 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Roll>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Thread>
  */
-class RollFactory extends Factory
+class ThreadFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class RollFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'description' => fake()->text(),
+            'text' => fake()->text(),
             'is_locked' => false,
             'visibility' => 'public',
         ];
