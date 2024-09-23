@@ -1,6 +1,9 @@
 <script setup>
-import { Link, useForm } from '@inertiajs/vue3';
+import { computed } from 'vue';
+import { usePage, useForm, Link } from '@inertiajs/vue3';
 
+const page = usePage();
+const errors = computed(() => page.props.errors);
 const form = useForm({
     email: '',
     password: '',

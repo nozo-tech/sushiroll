@@ -31,7 +31,9 @@ class ChannelController extends Controller
      */
     public function store(StoreChannelRequest $request)
     {
-        //
+        $channel = $request->user()->channels()->create($request->validated());
+
+        return to_route('channels.show', $channel);
     }
 
     /**
