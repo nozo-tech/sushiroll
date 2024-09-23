@@ -1,5 +1,6 @@
 <script setup>
 import DefaultLayout from '@/Layouts/Default.vue';
+import Markdown from '@/Components/Markdown.vue';
 import Comments from '@/Components/Comments.vue';
 
 defineProps({ thread: Object });
@@ -19,7 +20,9 @@ defineProps({ thread: Object });
 
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-            <section v-html="$markdown(thread.text)" class="prose dark:prose-invert"></section>
+            <!-- <section v-html="$markdown(thread.text)" class="prose dark:prose-invert"></section> -->
+
+            <Markdown :markdown="thread.text" ></Markdown>
 
             <Comments :comments="thread.comments" />
         </div>

@@ -17,11 +17,23 @@ class UserController extends Controller
     }
 
     /**
+     * Display a listing of the resource based on a search query.
+     */
+    public function search()
+    {
+        $users = User::where('handle', 'like', request('query'))->paginate(50)->get();
+
+        return inertia('Users/Index', [
+            'users' => $users
+        ]);
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        //
+        return to_route('register'); // Redundancy.
     }
 
     /**
@@ -49,7 +61,9 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+        return inertia('Users/Edit', [
+            'user' => $user
+        ]);
     }
 
     /**
@@ -57,7 +71,9 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        //
+        $user->update($request->validated());
+
+        return to_route('users.show', $user);
     }
 
     /**
@@ -65,6 +81,8 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        $user->delete();
+
+        return to_route('welcome');
     }
 }
