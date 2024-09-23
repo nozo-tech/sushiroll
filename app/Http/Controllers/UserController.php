@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
+use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
@@ -29,6 +30,18 @@ class UserController extends Controller
     }
 
     /**
+     * Try to authenticate the user.
+     */
+    public function login(Request $request)
+    {
+        if (auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')], $request->input('remember'))) {
+            return redirect()->route('home');
+        }
+
+        return back()->withErrors(['login' => 'The provided credentials do not match our records.']);
+    }
+
+    /**
      * Show the form for creating a new resource.
      */
     public function create()
@@ -41,7 +54,7 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        User::create($request);
+        User::create($request->validated());
 
         return to_route('login');
     }
