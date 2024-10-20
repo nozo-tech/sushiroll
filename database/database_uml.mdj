@@ -3017,7 +3017,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3025,7 +3026,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "handle"
+							"name": "handle",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3033,7 +3035,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "name"
+							"name": "name",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3041,7 +3044,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3049,7 +3053,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "email"
+							"name": "email",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3057,7 +3062,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "email_verified_at"
+							"name": "email_verified_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3065,7 +3071,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "password"
+							"name": "password",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3073,7 +3080,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "remember_token"
+							"name": "remember_token",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3081,7 +3089,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "banned_at"
+							"name": "banned_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3089,7 +3098,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3097,7 +3107,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3105,7 +3116,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiFD+/ULAmo="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3123,7 +3135,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3131,7 +3144,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "handle"
+							"name": "handle",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3139,7 +3153,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "name"
+							"name": "name",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3147,7 +3162,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3155,7 +3171,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "user_id"
+							"name": "user_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3163,7 +3180,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "banned_at"
+							"name": "banned_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3171,7 +3189,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3179,7 +3198,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3187,7 +3207,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiNNJPWMzws="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3205,7 +3226,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3213,7 +3235,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "handle"
+							"name": "handle",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3221,7 +3244,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "name"
+							"name": "name",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3229,7 +3253,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3237,7 +3262,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "livestream_key"
+							"name": "livestream_key",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3245,7 +3271,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "user_id"
+							"name": "user_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3253,7 +3280,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "banned_at"
+							"name": "banned_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3261,7 +3289,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3269,7 +3298,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3277,7 +3307,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiQiXPX0fl8="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3295,7 +3326,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3303,7 +3335,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "handle"
+							"name": "handle",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3311,7 +3344,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "name"
+							"name": "name",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3319,7 +3353,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3327,7 +3362,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "user_id"
+							"name": "user_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3335,7 +3371,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "communityable_type"
+							"name": "communityable_type",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3343,7 +3380,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "banned_at"
+							"name": "banned_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3351,7 +3389,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3359,7 +3398,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3367,7 +3407,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFiZ57fZsPaY="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3385,7 +3426,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3393,7 +3435,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "title"
+							"name": "title",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3401,7 +3444,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3409,7 +3453,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "is_locked"
+							"name": "is_locked",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3417,7 +3462,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "visibility"
+							"name": "visibility",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3425,7 +3471,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "channel_id"
+							"name": "channel_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3433,7 +3480,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3441,7 +3489,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3449,7 +3498,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFigEAvbeDPc="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3467,7 +3517,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3475,7 +3526,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "title"
+							"name": "title",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3483,7 +3535,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "description"
+							"name": "description",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3491,7 +3544,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "is_live"
+							"name": "is_live",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3499,7 +3553,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "is_locked"
+							"name": "is_locked",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3507,7 +3562,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "visibility"
+							"name": "visibility",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3515,7 +3571,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "channel_id"
+							"name": "channel_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3523,7 +3580,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3531,7 +3589,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3539,7 +3598,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFii8S/dMFXc="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3587,7 +3647,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3595,7 +3656,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "title"
+							"name": "title",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3603,7 +3665,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "text"
+							"name": "text",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3611,7 +3674,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "is_locked"
+							"name": "is_locked",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3619,7 +3683,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "visibility"
+							"name": "visibility",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3627,7 +3692,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "user_id"
+							"name": "user_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3635,7 +3701,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "community_id"
+							"name": "community_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3643,7 +3710,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3651,7 +3719,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3659,7 +3728,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFim5cve/jcM="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3677,7 +3747,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "id"
+							"name": "id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3685,7 +3756,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "text"
+							"name": "text",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3693,7 +3765,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "user_id"
+							"name": "user_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3701,7 +3774,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "commentable_id"
+							"name": "commentable_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3709,7 +3783,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "commentable_type"
+							"name": "commentable_type",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3717,7 +3792,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "deleted_at"
+							"name": "deleted_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3725,7 +3801,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "updated_at"
+							"name": "updated_at",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3733,7 +3810,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFisMWfg0aE8="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				},
@@ -3751,7 +3829,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFksGFPtZyTA="
 							},
-							"name": "channel_id"
+							"name": "channel_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3759,7 +3838,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFksGFPtZyTA="
 							},
-							"name": "group_id"
+							"name": "group_id",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -3767,7 +3847,8 @@
 							"_parent": {
 								"$ref": "AAAAAAGSFksGFPtZyTA="
 							},
-							"name": "created_at"
+							"name": "created_at",
+							"type": ""
 						}
 					]
 				}
