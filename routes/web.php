@@ -47,3 +47,28 @@ Route::resource('threads', ThreadController::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->group(function () {
 // });
+
+/*
+|--------------------------------------------------------------------------
+| Quick Routes
+|--------------------------------------------------------------------------
+|
+| These routes are used to quickly share a link and navigate to a resource by its handle.
+|
+*/
+
+Route::get('/u/{handle}', function ($handle) {
+    return to_route('channels.show', \App\Models\User::firstWhere('handle', $handle));
+})->name('users.quick');
+
+Route::get('/ch/{handle}', function ($handle) {
+    return to_route('channels.show', \App\Models\Channel::firstWhere('handle', $handle));
+})->name('channels.quick');
+
+Route::get('/g/{handle}', function ($handle) {
+    return to_route('channels.show', \App\Models\Group::firstWhere('handle', $handle));
+})->name('groups.quick');
+
+Route::get('/co/{handle}', function ($handle) {
+    return to_route('channels.show', \App\Models\Community::firstWhere('handle', $handle));
+})->name('communities.quick');
