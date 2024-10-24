@@ -1,0 +1,2 @@
+Deno.test(function addTest() {
+});
