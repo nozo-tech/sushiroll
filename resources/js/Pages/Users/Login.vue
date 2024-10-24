@@ -1,16 +1,11 @@
 <script setup>
-import { computed } from 'vue';
-import { usePage, useForm, Link } from '@inertiajs/vue3';
+import { useForm, Link } from '@inertiajs/vue3';
 
-const page = usePage();
-const errors = computed(() => page.props.errors);
 const form = useForm({
     email: '',
     password: '',
     remember: false,
 });
-
-defineProps({ errors: Object });
 </script>
 
 <template>
@@ -33,14 +28,14 @@ defineProps({ errors: Object });
                     </div>
 
                     <Transition name="fade">
-                        <div v-if="errors?.login" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
-                            <span class="font-medium">Error!</span> {{ errors.login }}
+                        <div v-if="form.errors?.login" class="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400" role="alert">
+                            <span class="font-medium">Error!</span> {{ form.errors.login }}
                         </div>
                     </Transition>
 
                     <div class="flex items-start mb-5">
                         <div class="flex items-center h-5">
-                            <input v-model="form.remember" id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+                            <input v-model="form.remember" id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"/>
                         </div>
                         <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
                     </div>
@@ -50,7 +45,8 @@ defineProps({ errors: Object });
                         <!--
                         <a href="#" class="text-blue-600 text-sm hover:underline dark:text-blue-500">Forgot your password?</a>
                         -->
-                        <Link :href="route('register')" class="float-right text-blue-600 text-sm hover:underline dark:text-blue-500">Create new account</Link>
+
+                        <Link :href="route('register')" class="text-blue-600 text-sm hover:underline dark:text-blue-500">Create new account</Link>
                     </div>
 
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
