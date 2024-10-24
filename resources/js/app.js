@@ -2,10 +2,10 @@ import { createApp, h } from 'vue';
 import { createInertiaApp, router } from '@inertiajs/vue3';
 import { ZiggyVue } from '@ziggy-vue';
 import { initFlowbite } from 'flowbite';
-import markdown from '@/markdown.js';
+import DOMPurify from 'dompurify';
 import '../css/app.css';
 
-router.on('finish', initFlowbite);
+router.on('navigate', initFlowbite);
 
 createInertiaApp({
     resolve: name => {
@@ -17,8 +17,10 @@ createInertiaApp({
             .use(plugin)
             .use(ZiggyVue)
 
-        app.config.globalProperties.$markdown = markdown;
+        app.config.globalProperties.$markdown = (text) => {
+            return DOMPurify.sanitize(marked(text.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "")));
+        };
 
-        app.mount(el)
+        app.mount(el);
     },
 });
