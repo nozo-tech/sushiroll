@@ -73,7 +73,9 @@ class ChannelController extends Controller
      */
     public function edit(Channel $channel)
     {
-        //
+        return inertia('Channels/Edit', [
+            'channel' => $channel->only('handle', 'name', 'description')
+        ]);
     }
 
     /**
@@ -81,7 +83,9 @@ class ChannelController extends Controller
      */
     public function update(UpdateChannelRequest $request, Channel $channel)
     {
-        //
+        $channel->update($request->validated());
+
+        return to_route('channels.show', $channel);
     }
 
     /**
@@ -89,6 +93,8 @@ class ChannelController extends Controller
      */
     public function destroy(Channel $channel)
     {
-        //
+        $channel->delete();
+
+        return to_route('channels.index');
     }
 }
