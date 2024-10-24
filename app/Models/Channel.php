@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Support\Str;
 
 class Channel extends Model
 {
@@ -30,6 +31,7 @@ class Channel extends Model
      * @var array
      */
     protected $hidden = [
+        'livestream_key',
         'user_id',
     ];
 
@@ -78,5 +80,21 @@ class Channel extends Model
     public function threads(): HasMany
     {
         return $this->hasMany(Thread::class);
+    }
+
+    /**
+     * Generate a unique livestream key.
+     *
+     * This method generates a unique livestream key for a channel.
+     *
+     * @return string The generated livestream key
+     */
+    public static function generateLivestreamKey(): string
+    {
+        do { // Make sure the key is unique
+            $livestream_key = 'livekey_' . bin2hex(random_bytes(8)) . '_' . Str::random(32);
+        } while (static::where('livestream_key', $livestream_key)->exists());
+
+        return $livestream_key;
     }
 }

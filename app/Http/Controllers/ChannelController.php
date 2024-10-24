@@ -31,7 +31,11 @@ class ChannelController extends Controller
      */
     public function store(StoreChannelRequest $request)
     {
-        $channel = $request->user()->channels()->create($request->validated());
+        $channel = $request->user()->channels()->make($request->validated());
+        // Generate this channel's livestream key
+        // 'livestream_key' is not mass-assignable for security reasons
+        $channel->livestream_key = Channel::generateLivestreamKey();
+        $channel->save();
 
         return to_route('channels.show', $channel);
     }
@@ -41,9 +45,27 @@ class ChannelController extends Controller
      */
     public function show(Channel $channel)
     {
+        // We hide the livestream key from the user by default
+        $hidden_livestream_key = null;
+        if ($channel->livestream_key != null) {
+            $hidden_livestream_key = str_repeat('*', strlen($channel->livestream_key));
+        }
+
         return inertia('Channels/Show', [
-            'channel' => $channel->load('rolls')->loadCount('rolls')
+            'channel' => array_merge($channel->load('rolls')->loadCount('rolls'),
+                ['livestream_key' => $hidden_livestream_key]
+            )
         ]);
+    }
+
+    /**
+     * Return the livestream key for the specified channel.
+     *
+     * If the user wants to see their livestream key.
+     */
+    public function showLivestreamKey(Channel $channel)
+    {
+        return response()->json(['livestream_key' => $channel->livestream_key]);
     }
 
     /**
