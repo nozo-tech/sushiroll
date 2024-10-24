@@ -15,7 +15,9 @@ return new class extends Migration
         Schema::create('rolls', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->string('title');
-            $table->longText('description')->nullable();
+            $table->text('description')->nullable();
+            $table->integer('likes')->default(0);
+            $table->integer('dislikes')->default(0);
             $table->boolean('is_locked')->default(false);
             $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
             $table->foreignIdFor(Channel::class)->constrained();

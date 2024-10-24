@@ -16,7 +16,9 @@ return new class extends Migration
         Schema::create('threads', function (Blueprint $table) {
             $table->ulid('id')->primary();
             $table->string('title');
-            $table->longText('text');
+            $table->text('text');
+            $table->integer('likes')->default(0);
+            $table->integer('dislikes')->default(0);
             $table->boolean('is_locked')->default(false);
             $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
             $table->foreignIdFor(User::class)->constrained();

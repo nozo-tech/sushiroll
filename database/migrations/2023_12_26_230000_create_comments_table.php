@@ -14,7 +14,9 @@ return new class extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->ulid('id')->primary();
-            $table->longText('text');
+            $table->text('text');
+            $table->integer('likes')->default(0);
+            $table->integer('dislikes')->default(0);
             $table->foreignIdFor(User::class)->constrained();
             $table->ulidMorphs('commentable');
             $table->softDeletes();

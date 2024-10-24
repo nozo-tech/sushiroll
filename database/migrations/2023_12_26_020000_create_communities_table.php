@@ -17,7 +17,8 @@ return new class extends Migration
             $table->string('handle')->unique();
             $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->foreignIdFor(User::class);
+            $table->integer('followers')->default(0);
+            $table->foreignIdFor(User::class)->constrained();
             $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();

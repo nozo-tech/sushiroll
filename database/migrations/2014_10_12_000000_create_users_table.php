@@ -16,6 +16,8 @@ return new class extends Migration
             $table->ulid('handle')->unique();
             $table->string('name');
             $table->text('description')->nullable();
+            $table->integer('followers')->default(0);
+            $table->integer('friends')->default(0);
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

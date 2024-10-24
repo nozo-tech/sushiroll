@@ -18,9 +18,9 @@ return new class extends Migration
             $table->string('handle')->unique();
             $table->string('name')->unique();
             $table->text('description')->nullable();
+            $table->integer('followers')->default(0);
             $table->string('livestream_key')->unique()->nullable();
             $table->foreignIdFor(User::class)->constrained();
-            // $table->foreignIdFor(Group::class)->nullable();
             $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();

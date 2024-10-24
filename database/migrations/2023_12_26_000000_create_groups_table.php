@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,8 @@ return new class extends Migration
             $table->string('handle')->unique();
             $table->string('name')->unique();
             $table->text('description')->nullable();
-            $table->foreignIdFor(\App\Models\User::class)->constrained();
+            $table->integer('followers')->default(0);
+            $table->foreignIdFor(User::class)->constrained();
             $table->timestamp('banned_at')->nullable();
             $table->softDeletes();
             $table->timestamps();
