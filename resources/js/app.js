@@ -3,6 +3,7 @@ import { createInertiaApp, router } from '@inertiajs/vue3';
 import { ZiggyVue } from '@ziggy-vue';
 import { initFlowbite } from 'flowbite';
 import DOMPurify from 'dompurify';
+import { marked } from 'marked';
 import '../css/app.css';
 
 router.on('navigate', initFlowbite);

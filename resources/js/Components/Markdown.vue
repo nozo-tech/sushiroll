@@ -77,5 +77,5 @@ const markdown_output = computed(() => {
 </script>
 
 <template>
-    <div v-html="markdown_output" class="prose dark:prose-invert"></div>
+    <span v-html="markdown_output" class="prose dark:prose-invert"></span>
 </template>
