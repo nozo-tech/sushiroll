@@ -33,6 +33,7 @@ Route::get('/welcome', fn () => inertia('Welcome'))->name('welcome');
 Route::get('/register', fn () => inertia('Users/Register'))->name('register');
 Route::get('/login', fn () => inertia('Users/Login'))->name('login');
 Route::post('/login', [UserController::class, 'login'])->name('login');
+Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 Route::resource('users', UserController::class);
 Route::resource('channels', ChannelController::class);
