@@ -4,6 +4,7 @@ import { Link, usePage } from '@inertiajs/vue3';
 
 const page = usePage();
 const user = computed(() => page.props.auth.user);
+const success = computed(() => page.props.success);
 </script>
 
 <template>
@@ -86,14 +87,16 @@ const user = computed(() => page.props.auth.user);
                                     <li>
                                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Dashboard</a>
                                     </li>
+                                    <!--
                                     <li>
                                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Settings</a>
                                     </li>
                                     <li>
                                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Earnings</a>
                                     </li>
+                                    -->
                                     <li>
-                                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</a>
+                                        <Link :href="route('logout')" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Sign out</Link>
                                     </li>
                                 </ul>
                             </div>
@@ -186,6 +189,12 @@ const user = computed(() => page.props.auth.user);
         </aside>
 
         <main class="min-h-full sm:ml-64 bg-white border-gray-200 dark:bg-gray-900">
+            <Transition name="fade">
+                <div v-if="success" class="p-4 mb-4 mx-auto text-sm text-emerald-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-emerald-400" role="alert">
+                    {{ success }}
+                </div>
+            </Transition>
+
             <slot />
         </main>
 

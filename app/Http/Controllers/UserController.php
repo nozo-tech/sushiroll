@@ -35,10 +35,20 @@ class UserController extends Controller
     public function login(Request $request)
     {
         if (auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')], $request->input('remember'))) {
-            return redirect()->route('home');
+            return to_route('home');
         }
 
         return back()->withErrors(['login' => 'The provided credentials do not match our records.']);
+    }
+
+    /**
+     * Log the user out.
+     */
+    public function logout()
+    {
+        auth()->logout();
+
+        return back()->with('success', 'You have been logged out successfully.');
     }
 
     /**
