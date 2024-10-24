@@ -18,14 +18,24 @@ class DatabaseSeeder extends Seeder
                 \App\Models\Channel::factory(1)
                     ->has(
                         \App\Models\Roll::factory(16)
-                            ->hasComments(16)
+                            ->has(
+                                \App\Models\Comment::factory(16)
+                                ->state(function (array $attributes, \App\Models\Roll $roll) {
+                                    return ['user_id' => $roll->channel->user->id];
+                                })
+                            )
                     )
             )
             ->has(
                 \App\Models\Community::factory(1)
                     ->has(
                         \App\Models\Thread::factory(1)
-                            ->hasComments(16)
+                            ->has(
+                                \App\Models\Comment::factory(16)
+                                ->state(function (array $attributes, \App\Models\Thread $thread) {
+                                    return ['user_id' => $thread->user->id];
+                                })
+                            )
                             ->state(function (array $attributes, \App\Models\Community $community) {
                                 return ['user_id' => $community->user->id];
                             })
@@ -33,7 +43,12 @@ class DatabaseSeeder extends Seeder
             )
             ->has(
                 \App\Models\Thread::factory(4)
-                    ->hasComments(16)
+                    ->has(
+                        \App\Models\Comment::factory(16)
+                        ->state(function (array $attributes, \App\Models\Thread $thread) {
+                            return ['user_id' => $thread->user->id];
+                        })
+                    )
             )
             ->create();
 
