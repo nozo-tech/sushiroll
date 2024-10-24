@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -85,7 +86,7 @@ class UserController extends Controller
     public function edit(User $user)
     {
         return inertia('Users/Edit', [
-            'user' => $user
+            'user' => $user->only('handle', 'name', 'description', 'email')
         ]);
     }
 
@@ -94,7 +95,18 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        $user->update($request->validated());
+        if ($user->email !== $request->validated()['email']) {
+            // If the user changes their email, we need to re-verify it
+            $user->email_verified_at = null;
+        }
+
+        if (! empty($request->validated()['password'])) {
+            if (Hash::check($request->validated()['old_password'], $user->password)) {
+                return back()->withErrors(['password' => 'The provided previous password does not match our records.']);
+            }
+        }
+
+        $user->update($request->safe()->except('old_password'));
 
         return to_route('users.show', $user);
     }
