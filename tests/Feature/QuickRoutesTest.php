@@ -17,7 +17,9 @@ class QuickRoutesTest extends TestCase
      */
     public function test_user_quick_route(): void
     {
-        $user = User::factory(1, ['handle' => 'test_user'])->create();
+        $user = User::factory(1)->create();
+        $user->handle = 'test_user';
+        $user->save();
 
         $response = $this->get('/u/' . $user->handle);
 
@@ -29,9 +31,11 @@ class QuickRoutesTest extends TestCase
      */
     public function test_channel_quick_route(): void
     {
-        $channel = Channel::factory(1, ['handle' => 'test_channel'])
+        $channel = Channel::factory(1)
             ->forUser()
             ->create();
+        $channel->handle = 'test_channel';
+        $channel->save();
 
         $response = $this->get('/ch/' . $channel->handle);
 
