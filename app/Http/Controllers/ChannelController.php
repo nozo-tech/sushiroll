@@ -52,7 +52,7 @@ class ChannelController extends Controller
         }
 
         return inertia('Channels/Show', [
-            'channel' => array_merge($channel->load('rolls')->loadCount('rolls'),
+            'channel' => array_merge($channel->load('rolls')->loadCount('rolls')->toArray(),
                 ['livestream_key' => $hidden_livestream_key]
             )
         ]);
