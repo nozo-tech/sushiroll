@@ -12,7 +12,7 @@
         <meta name="apple-mobile-web-app-title" content="Sushiroll">
         <meta name="application-name" content="Sushiroll">
         <meta name="msapplication-TileColor" content="#da532c">
-        <meta name="theme-color" content="#ffffff">
+        <meta name="theme-color" content="#252525FF">
 
         <title>{{ config('app.name', 'Sushiroll') }}</title>
 
