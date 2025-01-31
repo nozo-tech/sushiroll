@@ -2,13 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RollController;
-use App\Http\Controllers\LiveController;
 use App\Http\Controllers\ChannelController;
 use App\Http\Controllers\CommunityController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ThreadController;
 use App\Http\Controllers\UserController;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -59,7 +57,7 @@ Route::resource('threads', ThreadController::class);
 */
 
 Route::get('/u/{handle}', function ($handle) {
-    return to_route('channels.show', \App\Models\User::firstWhere('handle', $handle));
+    return to_route('users.show', \App\Models\User::firstWhere('handle', $handle));
 })->name('users.quick');
 
 Route::get('/ch/{handle}', function ($handle) {
@@ -67,9 +65,9 @@ Route::get('/ch/{handle}', function ($handle) {
 })->name('channels.quick');
 
 Route::get('/g/{handle}', function ($handle) {
-    return to_route('channels.show', \App\Models\Group::firstWhere('handle', $handle));
+    return to_route('groups.show', \App\Models\Group::firstWhere('handle', $handle));
 })->name('groups.quick');
 
 Route::get('/co/{handle}', function ($handle) {
-    return to_route('channels.show', \App\Models\Community::firstWhere('handle', $handle));
+    return to_route('communities.show', \App\Models\Community::firstWhere('handle', $handle));
 })->name('communities.quick');

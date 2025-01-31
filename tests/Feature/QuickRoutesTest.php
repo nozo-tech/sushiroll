@@ -7,6 +7,8 @@ use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
 use App\Models\Channel;
+use App\Models\Community;
+use App\Models\Group;
 
 class QuickRoutesTest extends TestCase
 {
@@ -17,13 +19,13 @@ class QuickRoutesTest extends TestCase
      */
     public function test_user_quick_route(): void
     {
-        $user = User::factory()->makeOne();
-        $user->handle = 'test_user';
-        $user->save();
+        $users = User::factory(5)->create();
 
-        $response = $this->get('/u/' . $user->handle);
+        foreach ($users as $user) {
+            $response = $this->get('/u/' . $user->handle);
 
-        $response->assertRedirect('/users/' . $user->id);
+            $response->assertRedirect('/users/' . $user->id);
+        }
     }
 
     /**
@@ -31,14 +33,46 @@ class QuickRoutesTest extends TestCase
      */
     public function test_channel_quick_route(): void
     {
-        $channel = Channel::factory()
+        $channels = Channel::factory(5)
             ->forUser()
-            ->makeOne();
-        $channel->handle = 'test_channel';
-        $channel->save();
+            ->create();
 
-        $response = $this->get('/ch/' . $channel->handle);
+        foreach ($channels as $channel) {
+            $response = $this->get('/ch/' . $channel->handle);
 
-        $response->assertRedirect('/channels/' . $channel->id);
+            $response->assertRedirect('/channels/' . $channel->id);
+        }
+    }
+
+    /**
+     * Test the application correctly redirects from the group quick route to the correct route.
+     */
+    public function test_group_quick_route(): void
+    {
+        $groups = Group::factory(5)
+            ->forUser()
+            ->create();
+
+        foreach ($groups as $group) {
+            $response = $this->get('/g/' . $group->handle);
+
+            $response->assertRedirect('/groups/' . $group->id);
+        }
+    }
+
+    /**
+     * Test the application correctly redirects from the community quick route to the correct route.
+     */
+    public function test_community_quick_route(): void
+    {
+        $communities = Community::factory(5)
+            ->forUser()
+            ->create();
+
+        foreach ($communities as $community) {
+            $response = $this->get('/co/' . $community->handle);
+
+            $response->assertRedirect('/communities/' . $community->id);
+        }
     }
 }
