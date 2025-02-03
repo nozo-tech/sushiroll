@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@source "../views";
+@source "../js";
 
 .fade-enter-active,
 .fade-leave-active {
