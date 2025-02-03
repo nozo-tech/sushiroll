@@ -13,9 +13,7 @@ class RollController extends Controller
      */
     public function index()
     {
-        return inertia('Rolls/Index', [
-            'rolls' => Roll::all()
-        ]);
+        return inertia('Rolls/Index', ['rolls' => Roll::all()]);
     }
 
     /**
@@ -49,9 +47,7 @@ class RollController extends Controller
      */
     public function edit(Roll $roll)
     {
-        return inertia('Rolls/Edit', [
-            'roll' => $roll
-        ]);
+        return inertia('Rolls/Edit', ['roll' => $roll]);
     }
 
     /**

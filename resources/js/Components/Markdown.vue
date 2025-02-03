@@ -1,13 +1,11 @@
 <script setup>
-import SushirollLink from '@/Components/SushirollLink.vue';
 import { Marked } from 'marked';
 import DOMPurify from 'dompurify';
-import { h, computed, ref } from 'vue';
-import { data } from 'autoprefixer';
+import { computed } from 'vue';
 
-const props = defineProps({ markdown: String });
+const props = defineProps({ md: String });
 
-const markedInstance = new Marked();
+const marked = new Marked();
 
 function get_type(href) {
     var type = false;
@@ -30,18 +28,6 @@ function get_id(href) {
     arr.shift();
     return arr.join(":");
 }
-
-function link_onclick(evt) {
-    //evt.preventDefault();
-    //evt.stopPropagation();
-
-    router.visit(evt.target.href, {
-        method: evt.target.method,
-        data: evt.target.data,
-    });
-}
-
-window.link_onclick = link_onclick;
 
 const renderer = {
     link(token) {
@@ -91,13 +77,17 @@ const renderer = {
     }
 };
 
-const markdown_output = computed(() => {
-    markedInstance.use({ renderer });
+const output = computed(() => {
+    // marked.use({ renderer });
 
-    return DOMPurify.sanitize(markedInstance.parse(props.markdown.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, "")));
+    return DOMPurify.sanitize(
+        marked.parse(
+            props.md.replace(/^[\u200B\u200C\u200D\u200E\u200F\uFEFF]/, '')
+        )
+    );
 });
 </script>
 
 <template>
-    <span v-html="markdown_output" class="prose dark:prose-invert"></span>
+    <article v-html="output" class="prose dark:prose-invert"></article>
 </template>

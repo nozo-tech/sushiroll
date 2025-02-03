@@ -1,5 +1,6 @@
 <script setup>
 import DefaultLayout from '@/Layouts/Default.vue';
+import Markdown from '@/Components/Markdown.vue';
 import Comments from '@/Components/Comments.vue';
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { Link } from '@inertiajs/vue3';
@@ -47,7 +48,9 @@ onBeforeUnmount(() => {
 
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
-            <section v-html="$markdown(roll.description)" class="w-all prose dark:prose-invert"></section>
+            <section class="w-all">
+                <Markdown :md="roll.description" />
+            </section>
 
             <Comments :comments="roll.comments" />
         </div>
