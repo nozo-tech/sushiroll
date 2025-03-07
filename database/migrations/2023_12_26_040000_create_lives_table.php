@@ -20,7 +20,7 @@ return new class extends Migration
             $table->integer('dislikes')->default(0);
             $table->boolean('is_live')->default(false);
             $table->boolean('is_locked')->default(false);
-            $table->enum('visibility', ['public', 'unlisted', 'supporters-only', 'private']);
+            $table->string('visibility');
             $table->foreignIdFor(Channel::class)->constrained();
             $table->softDeletes();
             $table->timestamps();

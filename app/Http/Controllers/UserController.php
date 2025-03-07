@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -35,7 +36,7 @@ class UserController extends Controller
      */
     public function login(Request $request)
     {
-        if (auth()->attempt(['email' => $request->input('email'), 'password' => $request->input('password')], $request->input('remember'))) {
+        if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')], $request->input('remember'))) {
             return to_route('home');
         }
 
@@ -47,7 +48,7 @@ class UserController extends Controller
      */
     public function logout()
     {
-        auth()->logout();
+        Auth::logout();
 
         return back()->with('success', 'You have been logged out successfully.');
     }
@@ -95,13 +96,13 @@ class UserController extends Controller
      */
     public function update(UpdateUserRequest $request, User $user)
     {
-        if ($user->email !== $request->validated()['email']) {
+        if ((! empty($request->validated()['email'])) && $user->email !== $request->validated()['email']) {
             // If the user changes their email, we need to re-verify it
             $user->email_verified_at = null;
         }
 
         if (! empty($request->validated()['password'])) {
-            if (Hash::check($request->validated()['old_password'], $user->password)) {
+            if (! Hash::check($request->validated()['old_password'], $user->password)) {
                 return back()->withErrors(['password' => 'The provided previous password does not match our records.']);
             }
         }

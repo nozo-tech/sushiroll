@@ -1,4 +1,6 @@
 <script setup>
+import Markdown from '@/Components/Markdown.vue';
+
 defineProps({ comments: Array });
 </script>
 
@@ -15,7 +17,8 @@ defineProps({ comments: Array });
                         <!-- <span class="font-bold">{{ comment.user.name }}</span> -->
                         <span class="text-sm text-gray-500">{{ comment.created_at }}</span>
                     </div>
-                    <p v-html="$markdown(comment.text)" class="prose dark:prose-invert"></p>
+
+                    <p><Markdown :markdown="comment.text" /></p>
                 </div>
             </div>
         </div>
