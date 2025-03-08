@@ -6,7 +6,7 @@
         "build": "vite build"
     },
     "dependencies": {
-        "axios": "^1.8.1",
+        "axios": "^1.8.2",
         "dompurify": "^3.2.4",
         "marked": "^15.0.7",
         "video.js": "^8.22.0",
@@ -14,16 +14,16 @@
     },
     "devDependencies": {
         "@catppuccin/tailwindcss": "^0.1.6",
-        "@inertiajs/vue3": "^2.0.4",
+        "@inertiajs/vue3": "^2.0.5",
         "@originjs/vite-plugin-commonjs": "^1.0.3",
+        "@tailwindcss/vite": "4.0.12",
         "@tailwindcss/typography": "^0.5.16",
-        "@tailwindcss/vite": "^4.0.11",
         "@vitejs/plugin-vue": "^5.2.1",
         "flowbite": "^3.1.2",
         "flowbite-vue": "^0.1.9",
         "laravel-vite-plugin": "^1.2.0",
-        "tailwindcss": "^4.0.11",
-        "vite": "^6.2.0",
+        "tailwindcss": "^4.0.12",
+        "vite": "^6.2.1",
         "vue": "^3.5.13"
     }
 }

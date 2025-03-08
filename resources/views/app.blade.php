@@ -23,7 +23,7 @@
         @inertiaHead
     </head>
 
-    <body class="bg-white dark:bg-gray-900">
+    <body class="mocha bg-ctp-base text-ctp-text">
         @inertia
     </body>
 </html>
