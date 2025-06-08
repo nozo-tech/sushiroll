@@ -49,7 +49,7 @@ onBeforeUnmount(() => {
             <hr class="h-px my-8 bg-gray-200 border-0 dark:bg-gray-700">
 
             <section class="w-all">
-                <Markdown :md="roll.description" />
+                <Markdown :markdown="roll.description" />
             </section>
 
             <Comments :comments="roll.comments" />

@@ -1,9 +1,9 @@
 import { createApp, h } from 'vue';
 import { createInertiaApp, router } from '@inertiajs/vue3';
-import { ZiggyVue } from '@ziggy-vue';
+import { ZiggyVue } from 'ziggy-js';
 import { initFlowbite } from 'flowbite';
 
-router.on('navigate', initFlowbite);
+router.on('navigate', () => initFlowbite());
 
 createInertiaApp({
     resolve: name => {

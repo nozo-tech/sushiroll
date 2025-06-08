@@ -1,7 +1,12 @@
 <script setup>
 import Markdown from '@/Components/Markdown.vue';
 
-defineProps({ comments: { type: Array, required: true } });
+defineProps({
+    comments: {
+        type: Array,
+        required: true
+    }
+});
 </script>
 
 <template>
@@ -18,7 +23,7 @@ defineProps({ comments: { type: Array, required: true } });
                         <span class="text-sm text-gray-500">{{ comment.created_at }}</span>
                     </div>
 
-                    <Markdown :md="comment.text" />
+                    <p><Markdown :markdown="comment.text" /></p>
                 </div>
             </div>
         </div>
