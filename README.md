@@ -19,7 +19,7 @@ Welcome to Sushiroll - A Next-Generation Social Networking Experience 🍣
 
 ## Introduction
 
-Sushiroll is a revolutionary social networking platform developed by the innovative minds at NOZO.tech. Born out of the desire to create a space that transcends the limitations of traditional social networks, Sushiroll is designed to prioritize user agency, community building, and a rich, engaging experience. This README.md file provides an overview of the project, its features, and guidance on getting started.
+Sushiroll is a revolutionary social networking platform developed by creators, for creators. Born out of the desire to create a space that transcends the limitations of traditional social networks, Sushiroll is designed to prioritize user agency, community building, and a rich, engaging experience. This README.md file provides an overview of the project, its features, and guidance on getting started.
 
 ## Features
 
@@ -57,14 +57,6 @@ php artisan serve
 ```
 
 Sushiroll will be accessible at [http://localhost:8000](http://localhost:8000).
-
-## Customizable Recommendation Engine
-
-Sushiroll's recommendation engine is the heart of personalized user experiences. By allowing users to fine-tune their content recommendations, we aim to break down filter bubbles, echo chambers, and polarization, fostering a more diverse and enriching digital environment.
-
-## Dynamic Content Sharing
-
-Share your thoughts, creations, and experiences in various formats. Sushiroll supports long-form videos, captivating images, and concise text updates, ensuring that users have the tools to express themselves authentically. The combination of dynamic content sharing and our recommendation engine creates a truly engaging user experience.
 
 ## Contributing
 
